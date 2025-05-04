@@ -555,16 +555,7 @@ const Ultrasound3D4D = () => {
           </ul>
         </div>
 
-        {/* CTA Section */}
-        <div className="bg-blue-700 rounded-xl p-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Schedule Your Ultrasound Today</h2>
-          <p className="text-xl mb-6 max-w-2xl mx-auto">
-            Experience Jalandhar's most advanced 3D/4D and Doppler ultrasound services
-          </p>
-          <button className="bg-white text-blue-800 font-bold py-3 px-8 rounded-lg hover:bg-blue-100 transition-colors shadow-lg">
-            Book an Appointment
-          </button>
-        </div>
+     
       </div>
     </section>
   );

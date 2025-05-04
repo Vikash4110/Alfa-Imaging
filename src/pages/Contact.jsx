@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaUser, FaEnvelope, FaComment, FaPaperPlane, FaMapMarkerAlt, FaPhone, FaClock, FaInstagram, FaFacebook } from "react-icons/fa";
 import { toast } from "sonner";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +14,7 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
+  const mailtoLinkRef = useRef(null);
 
   // Initialize AOS
   useEffect(() => {
@@ -42,7 +41,7 @@ const Contact = () => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length > 0) {
@@ -51,27 +50,24 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    try {
-      const response = await fetch(`${backendUrl}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    // Prepare mailto link
+    const subject = encodeURIComponent(`Contact Form Submission from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoUrl = `mailto:alfalab929@gmail.com?subject=${subject}&body=${body}`;
 
-      if (!response.ok) throw new Error("Failed to send message");
-
-      const result = await response.json();
-      if (result.status === "success") {
-        toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        throw new Error("Server error");
-      }
-    } catch (error) {
-      toast.error("Failed to send message. Please try again.");
-    } finally {
-      setIsSubmitting(false);
+    // Update hidden link and trigger click
+    if (mailtoLinkRef.current) {
+      mailtoLinkRef.current.href = mailtoUrl;
+      mailtoLinkRef.current.click();
+      toast.success("Opening your email client...");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      toast.error("Failed to open email client. Please try again.");
     }
+
+    setIsSubmitting(false);
   };
 
   // Animation variants
@@ -130,8 +126,8 @@ const Contact = () => {
     {
       id: 4,
       icon: <FaClock className="h-5 w-5" />,
-      title: "Business Hours",
-      content: "Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM\nSunday: Closed",
+      title: "Working Hours",
+      content: "8AM TO 8PM\nEMERGENCY 24 HOURS",
       bgColor: "bg-amber-100",
       textColor: "text-amber-600",
     },
@@ -230,7 +226,7 @@ const Contact = () => {
                 ))}
               </div>
 
-              <div className="mt-10 pt-6 border-t border-gray-200">
+              {/* <div className="mt-10 pt-6 border-t border-gray-200">
                 <h3 className="text-lg font-['Inter'] font-medium text-[#1E3A8A] mb-4">Connect With Us</h3>
                 <div className="flex items-center space-x-4">
                   {socialLinks.map((social, index) => (
@@ -258,7 +254,7 @@ const Contact = () => {
                     />
                   </motion.div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
 
@@ -413,7 +409,7 @@ const Contact = () => {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           ></path>
                         </svg>
-                        Sending...
+                        Opening...
                       </>
                     ) : (
                       <>
@@ -424,6 +420,8 @@ const Contact = () => {
                   </motion.button>
                 </motion.div>
               </form>
+              {/* Hidden mailto link */}
+              <a ref={mailtoLinkRef} href="#" style={{ display: "none" }}></a>
             </div>
           </motion.div>
         </motion.div>
@@ -439,7 +437,7 @@ const Contact = () => {
         >
           <div className="relative w-full h-96">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.661987120164!2d75.57316297550182!3d31.32614417430524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5b6c4f6b3c6b%3A0x2a8f1e0c6b7c2f8a!2sAdarsh%20Nagar%2C%20Jalandhar%2C%20Punjab%20144008%2C%20India!5e0!3m2!1sen!2sin!4v1698765432109!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4448.463064225417!2d75.55997510562126!3d31.333701508622156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5b10e29d9c35%3A0xfe3ee433d70bf433!2sAlfa%20Imaging%20%26%20Diagnostic%20Lab!5e1!3m2!1sen!2sin!4v1746374200387!5m2!1sen!2sin"
               className="absolute inset-0 w-full h-full border-0"
               allowFullScreen=""
               loading="lazy"

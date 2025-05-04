@@ -289,17 +289,7 @@ const MammographyServices = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="bg-pink-700 rounded-xl p-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Prioritize Your Breast Health</h2>
-          <p className="text-xl mb-6 max-w-2xl mx-auto">
-            Schedule your mammogram or consultation with our breast imaging specialists
-          </p>
-          <button className="bg-white text-pink-800 font-bold py-3 px-8 rounded-lg hover:bg-pink-100 transition-colors shadow-lg flex items-center justify-center mx-auto">
-            <FaCalendarAlt className="mr-2" />
-            Book Your Screening
-          </button>
-        </div>
+    
       </div>
     </section>
   );

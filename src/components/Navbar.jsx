@@ -172,16 +172,7 @@ const Navbar = () => {
               </motion.span>
             </Link>
 
-            {/* CTA Button */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                to="/book-appointment"
-                className="flex items-center bg-[#10B981] hover:bg-[#059669] text-white px-6 py-2 rounded-full font-['Inter'] font-medium transition-colors duration-300"
-              >
-                <FaCalendarCheck className="mr-2" />
-                Book Appointment
-              </Link>
-            </motion.div>
+          
           </nav>
 
           {/* Mobile Hamburger */}
@@ -286,31 +277,7 @@ const Navbar = () => {
               Contact
             </Link>
 
-            <div className="mt-6 flex items-center space-x-6 px-4">
-              <a
-                href="tel:+628027927"
-                className="flex items-center text-[#10B981] hover:text-white transition-colors duration-200"
-              >
-                <FaPhoneAlt className="mr-2" />
-                Emergency
-              </a>
-              <a
-                href="https://instagram.com/alfaimaginganddiagnosticlab"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-[#10B981] transition-colors duration-200"
-              >
-                <FaInstagram size={24} />
-              </a>
-              <a
-                href="https://facebook.com/alfaimagingdiagnosticlab"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-[#10B981] transition-colors duration-200"
-              >
-                <FaFacebook size={24} />
-              </a>
-            </div>
+           
           </motion.div>
         )}
       </div>

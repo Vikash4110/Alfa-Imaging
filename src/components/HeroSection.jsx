@@ -1,6 +1,7 @@
 import { FaPhoneAlt, FaCalendarAlt, FaShieldAlt, FaClinicMedical } from "react-icons/fa";
 import MainImage from '../assets/image2.jpeg'
 import BackImg from '../assets/hands-unrecognizable-female-doctor-typing-keyboard-office.jpg'
+import { Link} from 'react-router-dom'
 const Hero = () => {
   return (
     <section className="relative bg-gradient-to-r from-blue-50 to-blue-100 overflow-hidden">
@@ -35,20 +36,13 @@ const Hero = () => {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a 
-                  href="/book-appointment" 
+                <Link 
+                  to="/contact" 
                   className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center transition shadow-lg"
                 >
                   <FaCalendarAlt className="mr-2" />
-                  Book Appointment
-                </a>
-                <a 
-                  href="tel:+628027927" 
-                  className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center transition shadow-lg"
-                >
-                  <FaPhoneAlt className="mr-2" />
-                  24/7 Emergency
-                </a>
+Contact Us                </Link>
+               
               </div>
 
               {/* Trust Indicators */}

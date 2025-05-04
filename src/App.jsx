@@ -8,6 +8,7 @@ import Loader from "./components/Loader";
 import CTScan from "./components/services/CtScan";
 import UltraSound from './components/services/UltraSound';
 import Mammography from './components/services/MemoGraphy';
+import EEC from './components/services/EEC';
 import Contact from './pages/Contact';
 Mammography
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/ultrasound" element={<UltraSound />} />
           <Route path="/ctscan" element={<CTScan />} />
           <Route path="/memograpy" element={<Mammography />} />
+          <Route path="/ecg-eeg" element={<EEC />} />
           <Route path="/contact" element={<Contact />} />
           {/* 404 ErrorPage */}
           {/* <Route path="*" element={<NotFoundPage />} />  */}

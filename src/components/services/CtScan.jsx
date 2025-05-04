@@ -249,16 +249,7 @@ const CTScanAngiography = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="bg-blue-700 rounded-xl p-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Experience Advanced CT Imaging</h2>
-          <p className="text-xl mb-6 max-w-2xl mx-auto">
-            Schedule your scan with Jalandhar's premier diagnostic center
-          </p>
-          <button className="bg-white text-blue-800 font-bold py-3 px-8 rounded-lg hover:bg-blue-100 transition-colors shadow-lg">
-            Book Your CT Scan
-          </button>
-        </div>
+      
       </div>
     </section>
   );

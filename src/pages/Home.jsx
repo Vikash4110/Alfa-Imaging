@@ -3,7 +3,8 @@ import HeroSection from "../components/HeroSection";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhyChooseUs from '../components/WhyChooseUs';
-import MissionVision from '../components/MissionVision'
+import MissionVision from '../components/MissionVision';
+import Nabh from '../components/Nabh';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -22,6 +23,7 @@ const Home = () => {
     <>
       <HeroSection />
       <WhyChooseUs />
+      <Nabh />
       <MissionVision />
       <Footer />
     </>
