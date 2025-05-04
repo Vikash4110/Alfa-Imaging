@@ -7,6 +7,9 @@ import AboutUs from "./components/AboutUs";
 import Loader from "./components/Loader";
 import CTScan from "./components/services/CtScan";
 import UltraSound from './components/services/UltraSound';
+import Mammography from './components/services/MemoGraphy';
+import Contact from './pages/Contact';
+Mammography
 function App() {
   const [isLoading, setIsLoading] = useState(false); 
 
@@ -36,6 +39,8 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/ultrasound" element={<UltraSound />} />
           <Route path="/ctscan" element={<CTScan />} />
+          <Route path="/memograpy" element={<Mammography />} />
+          <Route path="/contact" element={<Contact />} />
           {/* 404 ErrorPage */}
           {/* <Route path="*" element={<NotFoundPage />} />  */}
         </Routes>

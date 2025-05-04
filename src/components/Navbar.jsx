@@ -103,7 +103,7 @@ const Navbar = () => {
                   className="absolute left-0 mt-4 w-64 bg-white text-gray-700 shadow-xl rounded-lg py-2 z-50"
                 >
                   <Link
-                    to="/services/ultrasound"
+                    to="/ultrasound"
                     className="flex items-center px-4 py-2 hover:bg-[#10B981] hover:text-white transition-colors duration-200"
                     onClick={toggleServices}
                   >
@@ -111,7 +111,7 @@ const Navbar = () => {
                     3D/4D Ultrasound
                   </Link>
                   <Link
-                    to="/services/ct-scan"
+                    to="/ctscan"
                     className="flex items-center px-4 py-2 hover:bg-[#10B981] hover:text-white transition-colors duration-200"
                     onClick={toggleServices}
                   >
@@ -119,7 +119,7 @@ const Navbar = () => {
                     CT Scan & Angiography
                   </Link>
                   <Link
-                    to="/services/mammography"
+                    to="/memograpy"
                     className="flex items-center px-4 py-2 hover:bg-[#10B981] hover:text-white transition-colors duration-200"
                     onClick={toggleServices}
                   >
@@ -127,7 +127,7 @@ const Navbar = () => {
                     Digital Mammography
                   </Link>
                   <Link
-                    to="/services/ecg-eeg"
+                    to="/ecg-eeg"
                     className="flex items-center px-4 py-2 hover:bg-[#10B981] hover:text-white transition-colors duration-200"
                     onClick={toggleServices}
                   >
@@ -227,7 +227,7 @@ const Navbar = () => {
             {servicesDropdown && (
               <div className="pl-6">
                 <Link
-                  to="/services/ultrasound"
+                  to="/ultrasound"
                   className="flex items-center py-2 text-md font-['Inter'] hover:bg-[#10B981] hover:text-white px-4 rounded-md transition-colors duration-200"
                   onClick={() => { toggleServices(); toggleMenu(); }}
                 >
@@ -235,7 +235,7 @@ const Navbar = () => {
                   3D/4D Ultrasound
                 </Link>
                 <Link
-                  to="/services/ct-scan"
+                  to="/ctscan"
                   className="flex items-center py-2 text-md font-['Inter'] hover:bg-[#10B981] hover:text-white px-4 rounded-md transition-colors duration-200"
                   onClick={() => { toggleServices(); toggleMenu(); }}
                 >
@@ -243,7 +243,7 @@ const Navbar = () => {
                   CT Scan & Angiography
                 </Link>
                 <Link
-                  to="/services/mammography"
+                  to="/memograpy"
                   className="flex items-center py-2 text-md font-['Inter'] hover:bg-[#10B981] hover:text-white px-4 rounded-md transition-colors duration-200"
                   onClick={() => { toggleServices(); toggleMenu(); }}
                 >
@@ -251,7 +251,7 @@ const Navbar = () => {
                   Digital Mammography
                 </Link>
                 <Link
-                  to="/services/ecg-eeg"
+                  to="/ecg-eeg"
                   className="flex items-center py-2 text-md font-['Inter'] hover:bg-[#10B981] hover:text-white px-4 rounded-md transition-colors duration-200"
                   onClick={() => { toggleServices(); toggleMenu(); }}
                 >
